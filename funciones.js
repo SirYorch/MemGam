@@ -165,6 +165,8 @@ function abrir(){
                 function(){
                 cartas[0].classList.remove("abierta")
                 cartas[1].classList.remove("abierta")
+                cartas[0].classList.add("completa")
+                cartas[1].classList.add("completa")
                 terminar();
                 cartasAbiertas.forEach(function(elemento){elemento.addEventListener("click",abrir)})
                 },400)
