@@ -125,7 +125,7 @@ function volverInicio(){
 
 function repartirCartas(array){
     mesa.innerHTML = " " ; 
-    arrayPrivado= array.concat(array);
+    let arrayPrivado= array.concat(array);
     let arrayMix = arrayPrivado.sort(function(){return 0.5-Math.random()})
 
     let fragmentos = document.createDocumentFragment();
@@ -157,14 +157,17 @@ function abrir(){
     this.classList.add("abierta");
     let cartas = document.querySelectorAll(".abierta")
     if(cartas.length>1){
+        let cartasAbiertas = document.querySelectorAll(".card");
+        cartasAbiertas.forEach(function(elemento){elemento.removeEventListener("click",abrir)})
+            
         if(cartas[0].firstChild.innerHTML === cartas[1].firstChild.innerHTML){
             setTimeout(
                 function(){
-                cartas.forEach(
-                function(el){ el.classList.add('completa');
-                el.classList.remove("abierta")
+                cartas[0].classList.remove("abierta")
+                cartas[1].classList.remove("abierta")
                 terminar();
-                })},400)
+                cartasAbiertas.forEach(function(elemento){elemento.addEventListener("click",abrir)})
+                },400)
         }else{
             if(hardMode== true){
                 
@@ -179,6 +182,7 @@ function abrir(){
                 function(){
                 cartas.forEach(function(el){
                 el.classList.remove("abierta")
+                cartasAbiertas.forEach(function(elemento){elemento.addEventListener("click",abrir)})
                 })},400)
         }
     }
