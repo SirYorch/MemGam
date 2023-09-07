@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MemRize</title>
+    <link rel="icon" type="image/png" href="/emotions.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <meta name="viewport">
+</head>
+<body>
+    <div class="game">
+        <nav>
+            <li class="time"><p class="minutero">00</p>:<p class="segundero">00</p></li>
+            <li class="lifes"><i class="fa-solid fa-heart"></i><p class="numeroVidas">N</p></li>
+            <li class="menu"><i class="fa-solid fa-border-all"></i></li>
+        </nav>
+        <div class="pantallaMenu">
+            <ul>
+                <li class="nivel uno">Level 1</li>
+                <li class="nivel dos">Level 2</li>
+                <li class="nivel tres">Level 3</li>
+            </ul>
+        </div>
+        <div class="container">
+            <!-- <div class="c"><div class="card"><div class="back">😂</div></div></div>-->
+        </div>
+    </div>
+
+    <div class="lose screen cerrada">
+        <label>You lose</label>
+        <div class="return button">Main Menu</div>
+    </div>
+
+    <div class="nextScreen screen cerrada">
+        <label>you got it</label>
+        <div class="next button">Next Level</div>
+        <div class="return button">Main Menu</div>
+    </div>
+
+    <div class="start screen">
+        <h1>MemRize</h1>
+        <div class="easy button">Easy mode</div>
+        <div class="hard button">Hard mode</div>
+    </div>
+
+    <script src="var.js"></script>
+    <script src="funciones.js"></script>
+    <script src="eventListeners.js"></script>
+    <script src="https://kit.fontawesome.com/3857e228f2.js" crossorigin="anonymous"></script>
+</body>
+</html>

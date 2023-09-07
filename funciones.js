@@ -106,9 +106,10 @@ function siguienteNivel(){
 
 //funcion para que sirvan los botones de return
 function volverInicio(){
-    timer.style.display = "visible";
-    lifes.style.display = "visible";
-    menu.style.display = "visible";
+    console.log('siuuu')
+    timer.style.display = "flex";
+    lifescube.style.display = "flex";
+    menu.style.display = "flex";
     nivel=0;
     vidas = 0;
     tiempo = 0;
