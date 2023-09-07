@@ -148,6 +148,15 @@ function repartirCartas(array){
     
     mesa.appendChild(fragmentos);
     let cartas = document.querySelectorAll(".card");
+
+    cartas.forEach(function(cartaBucle){
+        cartaBucle.classList.add("abierta");
+    })
+    setTimeout(function(){
+        cartas.forEach(function(cartaBucle){
+            cartaBucle.classList.remove("abierta");
+        })
+    },1500)
     
     cartas.forEach(function(elemento){elemento.addEventListener("click",abrir)})
     
