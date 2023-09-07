@@ -1,0 +1,233 @@
+/* RESET CSS */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    user-select: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* VARIABLES DE COLORES DEL JUEGO*/ 
+
+:root{
+    --colort: #3A405A;
+    --color-card1:#75F4F4;
+    --color-card2:#90E0F3;
+    --color-bg:#E9AFA3;
+    --color-complement:#F9DEC9;
+}
+
+/*  estilos de fuentes */
+
+@font-face {
+    font-family: title;
+    src:url(fonts/PermanentMarker-Regular.ttf)
+  }
+
+/* PANTALLAS DE ENTRE-JUEGO */
+
+.screen{
+    width:100vw;
+    height:100vh;
+    position: absolute;
+    background-color:var(--color-bg);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size:100px;
+    font-family:title;
+    transition: margin 1s;
+}
+
+
+    /* BOTONES DE ACCION */ 
+.button{
+    margin:30px;
+    width:190px;
+    height:60px;
+    font-size:30px;
+    text-align: center;
+    padding-top:20px;
+    border-radius: 15px ;
+    background-color:var(--color-complement);
+    transition: box-shadow .3s, width .3s, height .3s;
+    cursor:pointer
+}
+    .button:hover{
+        box-shadow:0px 0px 15px  inset var(--colort);
+    }
+
+    /*pantalla de juego*/
+
+.game{
+    position:absolute;
+    top:0;
+    left:0;
+
+
+}
+/*pantalla de dispersion de tarjetas*/
+.container{
+    width:100vw;
+    height:calc(100vh - 150px);
+    background-color: var(--color-complement);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: auto;
+}
+/*tarjetas*/
+.card{
+    width:100px;
+    height:100px;
+    background: linear-gradient(90deg, var(--color-card1) 30%, var(--color-card2) 70%);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size:50px;
+    border-radius:15px;
+    border:5px solid var(--colort);
+    margin:15px;
+    flex-grow: 1;
+    transform-style: preserve-3d;
+    transition: transform .4s, filter 1s;
+    
+}
+.abierta{
+    transform:rotateY(-180deg);
+}
+.completa{
+    transform:rotateY(180deg);
+    filter: opacity(0);
+}
+
+.back{
+    background-color:var(--color-complement);
+    display: flex;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size:50px;
+    border-radius:15px;
+    border:5px solid var(--colort);
+    height:100px;
+    width:100px;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+/*topside de la pantalla de juego, con el timer, vidas etx*/
+nav{
+    
+    top:0;
+    left:0;
+    background-color:var(--colort);
+    width:100vw;
+    height:150px;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+li{
+    display:inline-block;
+    flex-grow:1;
+    max-width: 25%;
+    height:80px;
+    background-color:var(--color-complement);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+h1{
+    
+    margin:30px;
+    
+}
+.cerrada{
+    margin-top: -100vh;
+}
+
+/*  contenido para el menu de facil, para acceder a los niveles */
+.pantallaMenu{
+    position:absolute;
+    width:70%;
+    height:0;
+    overflow: hidden;
+    background-color:var(--color-bg);
+    left:0;
+    right:0;
+    margin:auto;
+    border-radius:0 0 50px 50px;
+    z-index: 1;
+    transition: height .5s;
+}
+.pantallaMenu ul{
+    width:100%;
+    min-height: 400px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.pantallaMenu li{
+    min-width:50%;
+    max-height:90px;
+    font-size: 30px;
+}
+.desplegado{
+    height: 400px;
+}
+
+.menu{
+    font-size: 70px;
+    max-width:90px;
+}
+.lifes{
+    font-size: 50px;
+    display:flex;
+    justify-content:space-evenly;
+}
+.time{
+    font-size:65px;
+}
