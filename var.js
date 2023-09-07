@@ -50,6 +50,7 @@ let mesa = document.querySelector(".container")
 
 let timer = document.querySelector(".time")
 let lifes = document.querySelector(".numeroVidas")
+let lifescube = document.querySelector(".lifes")
 let menu = document.querySelector(".menu")
 
 let nivel = 0;

@@ -66,13 +66,13 @@ function repartirCartasNivel(){
     nivel++;
     if(nivel ==1){
         repartirCartas(array1);
-        if(hardMode==true){tiempo=25;vidas =5; activarTiempo()}
+        if(hardMode==true){tiempo=25;vidas =7; activarTiempo()}
     } else if(nivel==2){
         repartirCartas(array2);
-        if(hardMode==true){tiempo+=35 ; vidas+=9;activarTiempo()}
+        if(hardMode==true){tiempo+=35 ; vidas+=11;activarTiempo()}
     } else if(nivel ==3){
         repartirCartas(array3);
-        if(hardMode==true){tiempo+=45; vidas+=12;activarTiempo()}
+        if(hardMode==true){tiempo+=45; vidas+=14;activarTiempo()}
     }
 }
 
@@ -125,10 +125,11 @@ function volverInicio(){
 
 function repartirCartas(array){
     mesa.innerHTML = " " ; 
+    array1= array.concat(array);
+    let arrayMix = array1.sort(function(){return 0.5-Math.random()})
 
     let fragmentos = document.createDocumentFragment();
-    for(let vueltas =0  ; vueltas <2 ;vueltas++ ){
-    for(let i of array){
+    for(let i of arrayMix){
         const c = document.createElement("DIV");
         c.classList.add("c");
 
@@ -142,7 +143,7 @@ function repartirCartas(array){
         c.appendChild(card);
         fragmentos.appendChild(c);
         }
-    }
+    
     
     mesa.appendChild(fragmentos);
     let cartas = document.querySelectorAll(".card");
@@ -187,7 +188,7 @@ function abrir(){
 function activarEasy(){
     desplegarInicio();
     timer.style.display = "none"
-    lifes.style.display = "none"
+    lifescube.style.display = "none"
     repartirCartasNivel();
 }
 function activarHard(){
