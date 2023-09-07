@@ -125,8 +125,8 @@ function volverInicio(){
 
 function repartirCartas(array){
     mesa.innerHTML = " " ; 
-    array1= array.concat(array);
-    let arrayMix = array1.sort(function(){return 0.5-Math.random()})
+    arrayPrivado= array.concat(array);
+    let arrayMix = arrayPrivado.sort(function(){return 0.5-Math.random()})
 
     let fragmentos = document.createDocumentFragment();
     for(let i of arrayMix){
