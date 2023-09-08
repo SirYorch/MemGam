@@ -19,7 +19,18 @@ function desplegarUltima(){
 //funcion para desplegar el menu de ayuda en el nivel facil
 function desplegarMenu(){
     menuNiveles.classList.toggle("desplegado");
+    if(menuNiveles.classList.contains("desplegado")){
+        let cartas = document.querySelectorAll(".card");cartas.forEach(function(elemento){elemento.removeEventListener("click",abrir)})
+    } else {
+        let cartas = document.querySelectorAll(".card");cartas.forEach(function(elemento){elemento.addEventListener("click",abrir)})
+    }
 }
+
+//funciond para desplegar la pantalla de victoria
+function desplegarWon(){
+    wonScreen.classList.toggle("cerrada");
+}
+
 
 
 //funcion para comprobar que ya se acabaron las cartasd el tablero
@@ -30,7 +41,11 @@ function terminar(){
         if(hardMode == true){
             clearInterval(tiempoDisponible);
         }
+        if(nivel ==3 ){
+            desplegarWon()
+        } else {
         desplegarSiguiente();
+    }
     }
 }
 
@@ -74,20 +89,30 @@ function repartirCartasNivel(){
         repartirCartas(array3);
         if(hardMode==true){tiempo+=45; vidas+=14;activarTiempo()}
     }
+    else if(nivel ==4 ){
+        desplegarWon();
+    }
 }
 
 // funciones de los botones de avanze en modo facil;
 function avanzarNivel1(){
-    repartirCartas(array1);
+    nivel=0;
+    repartirCartasNivel();
     desplegarMenu();
 }
 function avanzarNivel2(){
-    repartirCartas(array2);
+    nivel=1;
+    repartirCartasNivel();
     desplegarMenu();
 }
 function avanzarNivel3(){
-    repartirCartas(array3);
+    nivel=2;
+    repartirCartasNivel();
     desplegarMenu();
+}
+function returnInicio(){
+    desplegarMenu();
+    volverInicio();
 }
 
 //funcion para que sirva el boton de next en la pantalla de vitoria
@@ -106,7 +131,6 @@ function siguienteNivel(){
 
 //funcion para que sirvan los botones de return
 function volverInicio(){
-    console.log('siuuu')
     timer.style.display = "flex";
     lifescube.style.display = "flex";
     menu.style.display = "flex";
@@ -117,8 +141,11 @@ function volverInicio(){
     desplegarInicio();
 
     //esto es solo para que se quiten las pantallas, se me olvido antes jaja por eso las deje asi
+    setTimeout(function(){
     nextScreen.classList.add("cerrada")
     lastScreen.classList.add("cerrada")
+    wonScreen.classList.add("cerrada")},600
+    )
 }
 
 

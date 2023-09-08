@@ -1,12 +1,12 @@
 //variables de cartas
 
-let array1= ['😺','😸','😹','😻','😾','🐶'];
+let array1= ['😺','😸']//,'😹','😻','😾','🐶'];
 
-let array1mas = ['🤮','😡','🤡','🧐']
+let array1mas = ['🤮']//,'😡','🤡','🧐']
 
 let array2= array1.concat(array1mas)
 
-let array2mas = ['💀','💩','🐸']
+let array2mas = ['💀']//,'💩','🐸']
 
 let array3 = array2.concat(array2mas)
 
@@ -31,10 +31,14 @@ let lastScreen = document.querySelector(".lose");
 //menu de niveles modo facil
 let menuNiveles = document.querySelector(".pantallaMenu");
 
+//menu de victorio
+let wonScreen = document.querySelector(".win");
+
 //botones de modo facil
 let lvl1 = document.querySelector(".uno")
 let lvl2 = document.querySelector(".dos")
 let lvl3 = document.querySelector(".tres")
+let lvlret = document.querySelector(".returnMenu")
 
 //botones de segundas pantallas;
     //pantallas de siguiente nivel

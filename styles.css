@@ -232,3 +232,17 @@ h1{
 .time{
     font-size:65px;
 }
+.win{
+    width:100vw;
+    height:100vh;
+    z-index: 2;
+}
+.lose{
+    z-index: 3;
+}
+.nextScreen{
+    z-index: 4;
+}
+.start{
+    z-index: 5;
+}
