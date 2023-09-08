@@ -1,12 +1,12 @@
 //variables de cartas
 
-let array1= ['😺','😸']//,'😹','😻','😾','🐶'];
+let array1= ['😺','😹','😻','🐧','🐶'];
 
-let array1mas = ['🤮']//,'😡','🤡','🧐']
+let array1mas = ['🤮','😡','🧐']
 
 let array2= array1.concat(array1mas)
 
-let array2mas = ['💀']//,'💩','🐸']
+let array2mas = ['💀','💩']
 
 let array3 = array2.concat(array2mas)
 
